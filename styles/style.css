@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+}
+input {
+    cursor: pointer;
+}
+body {
+    background-image: linear-gradient(to left top, #051937, #241934, #331b30, #3d202b, #412728);
+    background-size: 1980px 2000px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 0, 0, 0.2);
+    padding: 1em;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.contenedor-modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+.abierto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cerrado {
+    display: none;
+}
+
+.calendario,
+.titulo,
+.advertencia {
+    font-size: 1.5em;
+}
+
+label {
+    font-size: 1.3em;
+}
+
+input[type="text"],
+input[type="date"] {
+    border: none;
+    outline: none;
+    padding: 10px 10px 10px 10px;
+    font-weight: 300;
+    font-size: 1.2em;
+    background: none;
+    border-bottom: 2px solid black;
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder {
+    font-weight: 400;
+}
+
+input[type="submit"] {
+    border: none;
+    font-size: 1.3em;
+    padding: 8px 0px 8px 0px;
+    transition: .3s;
+}
+
+.menu-tareas {
+    background-color: #fff;
+    position: fixed;
+    width: 20em;
+    height: 97%;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-tareas-titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-tareas-titulo img {
+    width: 100px;
+}
+
+.menu-tareas-titulo,
+.menu-tareas-formulario-tareas,
+.menu-tareas-fecha {
+    flex-grow: 1;
+}
+
+.menu-tareas-fecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.menu-tareas #agregar {
+    border: none;
+    cursor: pointer;
+    padding: 8px 10px 8px 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: .1s;
+    background-color: rgb(131, 207, 128);
+}
+#agregar:hover {
+    background-color: rgb(112, 185, 110);
+}
+
+.contenedor-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contenedor-flexible {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-tareas {
+    margin-left: 21em;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tarea, .tarea-modal {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 305px;
+    max-height: 305px;
+    padding: 1em;
+    background-color: #fff;
+    border-top: 10px solid #744812;
+    border-radius: 0px 0px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    transition: .3s;
+}
+.tarea-modal {
+    min-width: 550px;
+    max-width: 550px;
+    min-height: 405px;
+    max-height: 405px;
+}
+.tarea-modal .tarea-descripcion {
+    font-size: 1.5em;
+}
+.tarea-modal .tarea-fecha {
+    font-size: 1.5em;
+}
+.tarea-modal .tarea-titulo {
+    font-size: 2em;
+}
+.tarea-modal .tarea-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tarea-modal .tarea-titulo i {
+    cursor: pointer;
+}
+
+.tarea-titulo {
+    font-size: 1.8em;
+}
+
+.tarea-descripcion {
+    font-weight: 300;
+}
+.tarea-fecha {
+    font-size: 1.2em;
+}
+
+.tarea-opciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tarea-opciones .boton {
+    flex-grow: 1;
+    padding: 8px 10px 8px 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: .1s;
+}
+.leer {
+    border: none;
+    background-color: rgb(131, 207, 128);
+}
+.leer:hover {
+    background-color: rgb(112, 185, 110);
+}
+.actualizar {
+    border: none;
+    background-color: rgb(207, 198, 128);
+}
+.actualizar:hover {
+    background-color: rgb(184, 185, 110);
+}
+.eliminar {
+    border: none;
+    background-color: rgb(207, 128, 128);
+}
+.eliminar:hover {
+    background-color: rgb(185, 110, 110);
+}
+
+@media (max-width: 1000px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-tareas {
+        position: absolute;
+    }
+}

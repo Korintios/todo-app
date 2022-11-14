@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Simulador de Tareas</title>
+    <script src="https://kit.fontawesome.com/4fc08a8a58.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <aside class="menu-tareas">
+        <div class="menu-tareas-titulo">
+            <img src="public/logo1.png" alt="">
+            <p class="titulo">Simulador de Tareas</p>
+        </div>
+        <div class="menu-tareas-formulario-tareas">
+            <form id="formulario-tareas" class="contenedor-formulario">
+                <pre class="advertencia" id="advertencia"></pre>
+                <div class="contenedor-flexible">
+                    <label for="">Titulo</label>
+                    <input type="text" id="titulo" placeholder="Ingresar Titulo de Tarea">
+                </div>
+                <div class="contenedor-flexible">
+                    <label for="">Descripcion</label>
+                    <input type="text" id="descripcion" placeholder="Ingresar Descripcion de Tarea">
+                </div>
+                <div class="contenedor-flexible">
+                    <label for="">Fecha de Entrega (Opcional)</label>
+                    <input type="date" id="fecha_tarea">
+                </div>
+                <div class="contenedor-flexible">
+                    <button type="submit" id="agregar"><i class="fa-solid fa-plus"></i> Agregar Tarea</button>
+                </div>
+            </form>
+        </div>
+        <div class="menu-tareas-fecha">
+            <p class="calendario" id="fecha"></p>
+            <p class="calendario" id="hora"></p>
+        </div>
+    </aside>
+    <div class="contenedor-modal cerrado" id="modal">
+        <div class="tarea-modal">
+            <div class="tarea-titulo">
+                <p id="titulo-modal"></p>
+                <i class="fa-regular fa-circle-xmark" id="boton-salir-modal"></i>
+            </div>
+            <div class="tarea-descripcion">
+                <p id="descripcion-modal"></p>
+            </div>
+            <div class="tarea-fecha">
+                <p id="fecha-modal"></p>
+                <p id="fecha-entrega-modal"></p>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-tareas" id="tareas">
+    </div>
+    <script src="scripts/Tareas.js"></script>
+    <script src="scripts/Calendario.js"></script>
+</body>
+</html>
